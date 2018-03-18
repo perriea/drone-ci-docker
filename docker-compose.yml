@@ -10,7 +10,7 @@ services:
       - MYSQL_USER="drone"
       # CHANGEME MYSQL_PASSWORD: drone password
       - MYSQL_PASSWORD="XXXXXXXXXXXXXXXXXXX"
-      - MYSQL_DATABASE=drone
+      - MYSQL_DATABASE="drone"
     deploy:
       restart_policy:
         condition: on-failure
@@ -42,14 +42,15 @@ services:
       - DRONE_ADMIN="perriea"
       - DRONE_ADMIN_ALL="false"
       - DRONE_DATABASE_DRIVER="mysql"
-      # CHANGEME: 
+      # CHANGEME: same string (user drone password)
       - DRONE_DATABASE_DATASOURCE="drone:XXXXXXXXXXXXXXXXXXX@tcp(mariadb:3306)/drone?parseTime=true"
       - DRONE_OPEN=false
       # CHANGEME: OPTIONAL DRONE_HOST
-      - DRONE_HOST=http://drone.mycompany.com
+      - DRONE_HOST="http://drone.mycompany.com"
+      # CHANGEME: generate Github token
       - DRONE_GITHUB=true
-      - DRONE_GITHUB_CLIENT=CHANGEME
-      - DRONE_GITHUB_SECRET=XXXXXXXXXXXXXXXXXXXXXXXX
+      - DRONE_GITHUB_CLIENT="CHANGEME"
+      - DRONE_GITHUB_SECRET="CHANGEME"
     deploy:
       restart_policy:
         condition: on-failure
@@ -76,8 +77,9 @@ services:
     depends_on:
       - drone-server
     environment:
-      - DRONE_SERVER=drone-server:9000
-      - DRONE_SECRET=4O3O3FzjRgNHrtQQq4TyTFIXvWxfGKyO
+      - DRONE_SERVER="drone-server:9000"
+      # CHANGEME: same string (drone-server)
+      - DRONE_SECRET="CHANGEME"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
