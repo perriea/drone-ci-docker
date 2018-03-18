@@ -6,7 +6,7 @@ This repository contains a minimal example of Drone running within [docker-compo
 
 We recommend:
 
-* [Docker Engine](https://docs.docker.com/engine/installation/) >= 1.13.0
+* [docker Engine](https://docs.docker.com/engine/installation/) >= 1.13.0
 * [docker-compose](https://docs.docker.com/compose/install/) >= 1.18.0
 
 ## How this works
@@ -34,11 +34,16 @@ The former serves the web UI and responds to webhooks. The Drone Server's port 8
     * scale the number of agents servicing builds like this: `docker-compose scale drone-agent=3`,
     * plug CDN some **Cloudflare** ou ** AWS CloudFront**. This solution makes it possible to put the access in HTTPS easily and quickly.
 
-## Stuck? Need help?
+## Need help
 
-We've glossed over quite a few details, for the sake of brevity. If you have questions, post them to our [Help!](https://discuss.drone.io/c/help) category on the Drone Discussion site. If you'd like a more realtime option, visit our [Gitter room](https://gitter.im/drone/drone).
+If you have questions, post them to our [Help!](https://discourse.drone.io) category on the Drone Discussion site. If you'd like a more realtime option, visit our [Gitter room](https://gitter.im/drone/drone).
 
-## Contributions welcome!
+## Contributions
 
 If you have anything to add or improve, please don't hesitate to send
 pull requests.
+
+## Licence
+
+Licence [MIT](http://opensource.org/licenses/mit-license.php)   
+Developed by [Aurelien Perrier](http://about.me/perriea)
